@@ -14,3 +14,4 @@
 
 * Not production code yet
 * Missing docs
+* [Custom license which forbids public service](https://orion-docs.prefect.io/faq/#how-is-orion-licensed)
