@@ -3,6 +3,18 @@
 See if any of them can be used as base for ivresse.
 Each directory holds report for a workflow engine.
 
+## User stories
+
+### Prebaked workflow
+
+### Redo workflow
+
+### Do part of prebaked workflow
+
+### Replace node with alternative
+
+### Own code in workflow
+
 ## Requirements
 
 * Submit job to a queue
