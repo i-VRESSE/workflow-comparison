@@ -31,3 +31,9 @@ Each directory holds report for a workflow engine.
 * Compute on disk intensive on SLURM cluster and rest on cloud
 * For maintenance disable SLURM cluster so all calculations are done in cloud or vice versa
 * Has graphical way to construct a workflow from nodes
+
+## API standards
+
+It would be nice if the compute orchistrator is using a standardized API to prevent vendor lock-in.
+
+* https://github.com/ga4gh/workflow-execution-service-schemas
