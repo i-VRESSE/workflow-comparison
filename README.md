@@ -34,6 +34,6 @@ Each directory holds report for a workflow engine.
 
 ## API standards
 
-It would be nice if the compute orchistrator is using a standardized API to prevent vendor lock-in.
+It would be nice if the compute orchestrator is using a standardized API to prevent vendor lock-in.
 
 * https://github.com/ga4gh/workflow-execution-service-schemas
