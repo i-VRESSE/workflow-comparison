@@ -10,7 +10,7 @@
 Templates on https://fastapi.tiangolo.com/project-generation/ are old.
 Try list at https://github.com/mjhea0/awesome-fastapi#boilerplate
 
-# Try https://github.com/tiangolo/full-stack-fastapi-postgresql
+## Try https://github.com/tiangolo/full-stack-fastapi-postgresql
 
 ```
 pip install cookiecutter
@@ -46,7 +46,7 @@ docker_image_frontend [frontend]:
 
 ```
 
-# Try https://github.com/s3rius/FastAPI-template
+## Try https://github.com/s3rius/FastAPI-template
 
 ```
 python3 -m venv env
@@ -81,3 +81,5 @@ alembic upgrade "head"
 # start service in dev mode
 poetry run python -m bartender
 ```
+
+## Try https://github.com/Buuntu/fastapi-react
