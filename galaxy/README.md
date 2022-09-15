@@ -37,5 +37,8 @@ Things to try
   * remote with pulsar
 * rules to run tool on some job destination (if big then destination with shared fs)
 * execute tool via api, see https://github.com/galaxyproject/bioblend
-* only allow member of group to run haddock3, in tool_filters in galaxy.xml
+* only allow member of group to run haddock3, in tool_filters in galaxy.xml and admin user management portal
 * orcid login, in /oidc_backends_config.xml.sample
+
+Notes
+* Needed galaxy root in shorter path (/data/galaxy) as /home/someone/bla/something/somethingelse/ was too long
