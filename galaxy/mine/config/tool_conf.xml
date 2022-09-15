@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toolbox monitor="true">
+  <section id="getext" name="Get Data">
+    <tool file="data_source/upload.xml" />
+  </section>
+  <section id="send" name="Send Data">
+    <tool file="data_export/send.xml" />
+    <tool file="data_export/export_remote.xml" />
+  </section>
+  <section id="collection_operations" name="Collection Operations">
+    <tool file="${model_tools_path}/unzip_collection.xml" />
+    <tool file="${model_tools_path}/zip_collection.xml" />
+    <tool file="${model_tools_path}/filter_failed_collection.xml" />
+    <tool file="${model_tools_path}/filter_empty_collection.xml" />
+    <tool file="${model_tools_path}/flatten_collection.xml" />
+    <tool file="${model_tools_path}/merge_collection.xml" />
+    <tool file="${model_tools_path}/relabel_from_file.xml" />
+    <tool file="${model_tools_path}/filter_from_file.xml" />
+    <tool file="${model_tools_path}/sort_collection_list.xml" />
+    <tool file="${model_tools_path}/tag_collection_from_file.xml" />
+    <tool file="${model_tools_path}/apply_rules.xml" />
+    <tool file="${model_tools_path}/build_list.xml" />
+    <tool file="${model_tools_path}/build_list_1.2.0.xml" />
+    <tool file="${model_tools_path}/extract_dataset.xml" />
+  </section>
+  <section id="textutil" name="Text Manipulation">
+    <tool file="filters/fixedValueColumn.xml" />
+    <tool file="filters/catWrapper.xml" />
+    <tool file="filters/cutWrapper.xml" />
+    <tool file="filters/mergeCols.xml" />
+    <tool file="filters/convert_characters.xml" />
+    <tool file="filters/CreateInterval.xml" />
+    <tool file="filters/cutWrapper.xml" />
+    <tool file="filters/changeCase.xml" />
+    <tool file="filters/pasteWrapper.xml" />
+    <tool file="filters/remove_beginning.xml" />
+    <tool file="filters/randomlines.xml" />
+    <tool file="filters/headWrapper.xml" />
+    <tool file="filters/tailWrapper.xml" />
+    <tool file="filters/trimmer.xml" />
+    <tool file="filters/wc_gnu.xml" />
+    <tool file="filters/secure_hash_message_digest.xml" />
+  </section>
+  <section id="filter" name="Filter and Sort">
+    <tool file="stats/filtering.xml" />
+    <tool file="filters/sorter.xml" />
+    <tool file="filters/grep.xml" />
+    <tool file="filters/grep_1.0.1.xml"/>
+  </section>
+  <section id="group" name="Join, Subtract and Group">
+    <tool file="filters/joiner.xml" />
+    <tool file="filters/compare.xml" />
+    <tool file="stats/grouping.xml" />
+  </section>
+  <section id="interactivetools" name="Interactive tools">
+    <tool file="interactive/interactivetool_jupyter_notebook_1.0.0.xml" />
+    <tool file="interactive/interactivetool_jupyter_notebook.xml" />
+  </section>
+  <section id="docking" name="Docking">
+    <tool file="docking/haddock3.xml" />
+  </section>
+</toolbox>

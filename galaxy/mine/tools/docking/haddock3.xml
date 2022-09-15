@@ -1,0 +1,28 @@
+<tool id="haddock3" name="Haddock 3" version="1.0.0">
+    <description> </description>
+    <version_command>haddock3 -version</version_command>
+    <command><![CDATA[
+    haddock3 '$config' > '$output1' 2> '$output2'
+    ]]></command>
+        <inputs>
+            <param name="config" type="data" format="toml" label="Config file" />
+            <param name="config2" type="file" format="toml" label="Config file2" />
+            <repeat name="pdbs" title="Some title">
+                <param name="pdb" type="data" format="pdb" label="PDB files" />
+            </repeat>
+        </inputs>
+        <outputs>
+        <data name="output1" format="txt" />
+        <data name="output2" format="txt" />
+        </outputs>
+        <help>
+        .. class:: infomark
+
+        What is haddock3?
+
+
+        </help>
+    <requirements>
+        <container type="singularity">/data/galaxy/tools/docking/haddock3-beta2.sif</container>
+    </requirements>
+</tool>
