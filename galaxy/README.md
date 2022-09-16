@@ -37,6 +37,7 @@ Things to try
   * remote with pulsar
 * rules to run tool on some job destination (if big then destination with shared fs)
 * execute tool via api, see https://github.com/galaxyproject/bioblend
+  * can we wrap bartender around galaxy?
 * only allow member of group to run haddock3, in tool_filters in galaxy.xml and admin user management portal
 * orcid login, in /oidc_backends_config.xml.sample
 
