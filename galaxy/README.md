@@ -11,7 +11,7 @@ A workflow is constructed from previously executed tools. Each tool input can be
 * Allows sharing data between users
 * has runners https://docs.galaxyproject.org/en/master/lib/galaxy.jobs.runners.html like 
   https://pulsar.readthedocs.io/en/latest/readme.html
-* has api https://bioblend.readthedocs.io/en/latest/api_docs/galaxy/docs.html
+* has api https://bioblend.readthedocs.io/en/latest/api_docs/galaxy/docs.html , https://usegalaxy.org/api/docs , https://galaxyproject.org/develop/api/
 * has dynamic rules to route jobs to runners
 
 ## Cons
