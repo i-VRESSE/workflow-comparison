@@ -11,7 +11,7 @@ A workflow is constructed from previously executed tools. Each tool input can be
 * Allows sharing data between users
 * has runners https://docs.galaxyproject.org/en/master/lib/galaxy.jobs.runners.html like 
   https://pulsar.readthedocs.io/en/latest/readme.html
-* has api https://bioblend.readthedocs.io/en/latest/api_docs/galaxy/docs.html
+* has api https://bioblend.readthedocs.io/en/latest/api_docs/galaxy/docs.html , https://usegalaxy.org/api/docs , https://galaxyproject.org/develop/api/
 * has dynamic rules to route jobs to runners
 
 ## Cons
@@ -37,6 +37,7 @@ Things to try
   * remote with pulsar
 * rules to run tool on some job destination (if big then destination with shared fs)
 * execute tool via api, see https://github.com/galaxyproject/bioblend
+  * can we wrap bartender around galaxy?
 * only allow member of group to run haddock3, in tool_filters in galaxy.xml and admin user management portal
 * orcid login, in /oidc_backends_config.xml.sample
 
