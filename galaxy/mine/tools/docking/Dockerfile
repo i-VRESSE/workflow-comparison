@@ -4,15 +4,15 @@
 #
 # Build with
 #
-#   docker build -t haddocking/haddock3:beta2 .
+#   docker build -t haddocking/haddock3:b69f6e3d .
 #
 # Run with
 #
-#   docker run -ti --rm haddocking/haddock3:beta2 --help
+#   docker run -ti --rm haddocking/haddock3:b69f6e3d --help
 #
 # Convert to apptainer with
 #
-#   apptainer build haddock3-beta2.sif docker-daemon://haddocking/haddock3:beta2
+#   apptainer build haddock3-b69f6e3d.sif docker-daemon://haddocking/haddock3:b69f6e3d
 #
 FROM python:3.10.7-buster
 

@@ -28,9 +28,9 @@ Things to try
 
 * upload archive file + unpack it + run haddock3
   * in single go
-  * upload as dataset first then run haddock3 
+  * [x] upload as dataset first then run haddock3 
   * as workflow, where unzip is done as workflow step
-* haddock3 container image, see https://training.galaxyproject.org/training-material/topics/admin/tutorials/singularity/tutorial.html
+* [x] haddock3 container image, see https://training.galaxyproject.org/training-material/topics/admin/tutorials/singularity/tutorial.html
 * job on
   * local
   * slurm
@@ -42,3 +42,19 @@ Things to try
 
 Notes
 * Needed galaxy root in shorter path (/data/galaxy) as /home/someone/bla/something/somethingelse/ was too long
+
+# Example dataset
+
+```
+cd <haddock3 repo>
+cd examples/docking-protein-protein/
+zip -r docking-protein-protein.zip .
+```
+
+1. Upload zip file
+   1. Set type to `zip`
+2. Launch haddock3 tool
+   1. Select zip file 
+   2. Set config file name = docking-protein-protein-test.cfg
+  
+After job complete each output file of haddock3 is an galaxy dataset (225 files).
