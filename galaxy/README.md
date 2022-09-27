@@ -44,6 +44,28 @@ Things to try
 Notes
 * Needed galaxy root in shorter path (/data/galaxy) as /home/someone/bla/something/somethingelse/ was too long
 
+## Install galaxy
+
+```
+export GALAXYMINE=$PWD/mine
+cd ~  # Galaxy needs to be run in short path
+git clone https://github.com/galaxyproject/galaxy.git
+cd galaxy
+git checkout v22.05
+ln -s $GALAXYMINE/tools/docking tools/docking
+ln -s $GALAXYMINE/config/galaxy.yml config/galaxy.yml
+cd config
+for x in $(ls -1 $GALAXYMINE/config)
+do
+ln -s $GALAXYMINE/config/$x
+done
+cd ..
+python3 -m venv .venv
+sh run.sh
+```
+
+See [mine/tools/docking/Dockerfile](mine/tools/docking/Dockerfile) how to make singularity container image for haddock3.
+
 # Example dataset
 
 ```

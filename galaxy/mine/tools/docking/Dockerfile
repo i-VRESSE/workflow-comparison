@@ -4,15 +4,19 @@
 #
 # Build with
 #
-#   docker build -t haddocking/haddock3:b69f6e3d .
+#   docker build -t haddocking/haddock3:d460a0a5 .
 #
 # Run with
 #
-#   docker run -ti --rm haddocking/haddock3:b69f6e3d --help
+#   docker run -ti --rm haddocking/haddock3:d460a0a5 --help
 #
 # Convert to apptainer with
 #
-#   apptainer build haddock3-b69f6e3d.sif docker-daemon://haddocking/haddock3:b69f6e3d
+#   apptainer build haddock3-d460a0a5.sif docker-daemon://haddocking/haddock3:d460a0a5
+#
+# Move to galaxy
+#
+#  mv haddock3-d460a0a5.sif $GALAXYROOT/tools/docking
 #
 FROM python:3.10.7-buster
 

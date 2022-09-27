@@ -1,4 +1,4 @@
-<tool id="haddock3" name="Haddock 3" version="1.0.0">
+<tool id="haddock3" name="Haddock 3" version="1.0.0" profile="21.09">
     <description> </description>
     <version_command>haddock3 --version</version_command>
     <!-- unzip + Overwrite run_dir to known value in recipe file + run haddock3 -->
@@ -41,6 +41,10 @@
 
         </help>
     <requirements>
-        <container type="singularity">/data/galaxy/tools/docking/haddock3-b69f6e3d.sif</container>
+    <!-- TODO figure out how to make image path relative to something -->
+        <container type="singularity">/home/stefanv/galaxy/tools/docking/haddock3-d460a0a5.sif</container>
     </requirements>
+    <environment_variables>
+    <environment_variable name="GALAXY_API_KEY" inject="api_key" />
+</environment_variables>
 </tool>

@@ -6,3 +6,5 @@ examples
 tests
 htmlcov
 venv
+env
+*.sif

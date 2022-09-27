@@ -32,5 +32,5 @@ exit
 ```
 
 ```
-cp cns_solve_1.3/intel-x86_64bit-linux/source/cns_solve-2209211134.exe <haddock3 repo>/bin/cns
+cp cns_solve_1.3/intel-x86_64bit-linux/source/cns_solve-*.exe <haddock3 repo>/bin/cns
 ```
