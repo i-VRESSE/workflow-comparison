@@ -27,7 +27,7 @@
             <!-- <data name="stdout" format="txt" label="Standard out" />
             <data name="stderr" format="txt" label="Standard err"/>
  -->
-            <collection name="haddock3-run" type="list:list" label="${tool.name} ${recipe.value} on ${on_string}">
+            <collection name="haddock3run" type="list:list" label="${tool.name} ${recipe.value} on ${on_string}">
                 <discover_datasets pattern="__name__" directory="run_dir" visible="true" format="auto" recurse="true" match_relative_path="true"/>
                 <!-- <discover_datasets pattern="__name_and_ext__" directory="run_dir" visible="true" format="auto" recurse="true"/> -->
                 <!-- <discover_datasets directory="run_dir" pattern="(?P&lt;module&gt;.*)\/(?P&lt;name&gt;.*)\.(?P&lt;ext&gt;[^\.]+)?" match_relative_path="true"  visible="true" format="auto" recurse="true"/> -->

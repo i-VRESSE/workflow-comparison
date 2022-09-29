@@ -29,16 +29,19 @@ Things to try
 * upload archive file + unpack it + run haddock3
   * in single go
   * [x] upload as dataset first then run haddock3 
+    * See mine/tools/docking/haddock3.xml 
   * as workflow, where unzip is done as workflow step
 * [x] haddock3 container image, see https://training.galaxyproject.org/training-material/topics/admin/tutorials/singularity/tutorial.html
+  * See mine/tools/docking/haddock3.xml , mine/config/job_conf.xml
 * job on
   * local
   * slurm
   * remote with pulsar
 * rules to run tool on some job destination (if big then destination with shared fs)
-* execute tool via api, see https://github.com/galaxyproject/bioblend
+* [x] execute tool via api, see https://github.com/galaxyproject/bioblend
   * can we wrap bartender around galaxy?
-* only allow member of group to run haddock3, in tool_filters in galaxy.xml and admin user management portal
+  * See [client.py](client.py)
+* only allow member of group to run haddock3, in tool_filters in galaxy.xml and admin user management portal, see https://galaxyproject.org/user-defined-toolbox-filters/
 * orcid login, in /oidc_backends_config.xml.sample
 
 Notes
