@@ -33,18 +33,22 @@ Things to try
   * as workflow, where unzip is done as workflow step
   * [x] upload as dataset first then run haddock3 with zip as output
     * See mine/tools/docking/haddock3zip.xml
+  * generaete recipe in tool
+    * See mine/tools/docking/haddock3files.xml
 * [x] haddock3 container image, see https://training.galaxyproject.org/training-material/topics/admin/tutorials/singularity/tutorial.html
   * See mine/tools/docking/haddock3.xml , mine/config/job_conf.xml
 * job on
-  * local
+  * [x] local
   * slurm
   * remote with pulsar
+  * dynamic, see https://training.galaxyproject.org/training-material/topics/admin/tutorials/job-destinations/tutorial.html
 * rules to run tool on some job destination (if big then destination with shared fs)
 * [x] execute tool via api, see https://github.com/galaxyproject/bioblend
   * can we wrap bartender around galaxy?
   * See [client.py](client.py)
 * only allow member of group to run haddock3, in tool_filters in galaxy.xml and admin user management portal, see https://galaxyproject.org/user-defined-toolbox-filters/ 
 * orcid login, in /oidc_backends_config.xml.sample
+* custom user fields, aka i am an academic or commercial fellow
 
 Notes
 * Needed galaxy root in shorter path (/data/galaxy) as /home/someone/bla/something/somethingelse/ was too long

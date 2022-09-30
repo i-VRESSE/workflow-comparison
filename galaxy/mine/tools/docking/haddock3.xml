@@ -44,13 +44,9 @@
 
         </help>
     <requirements>
-    <!-- TODO figure out how to make image path relative to something -->
-        <container type="singularity">/home/stefanv/galaxy/tools/docking/haddock3-d460a0a5.sif</container>
-    </requirements>
-    <requirements>
-    <expand macro="haddock3_requirements"/>
+        <expand macro="haddock3_requirements"/>
     </requirements>
     <environment_variables>
-    <environment_variable name="GALAXY_API_KEY" inject="api_key" />
-</environment_variables>
+        <environment_variable name="GALAXY_API_KEY" inject="api_key" />
+    </environment_variables>
 </tool>

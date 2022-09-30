@@ -60,5 +60,6 @@
     <tool file="docking/haddock3.xml" />
     <tool file="docking/haddock3zip.xml" />
     <tool file="docking/haddock3academic.xml" />
+    <tool file="docking/haddock3files.xml" />
   </section>
 </toolbox>
