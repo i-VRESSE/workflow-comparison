@@ -1,0 +1,30 @@
+<tool id="haddock3zip" name="Haddock 3 zipped" version="1.0.0" profile="21.09">
+    <macros>
+    <import>haddock3_macros.xml</import>
+    </macros>
+    <description> </description>
+    <version_command>haddock3 --version</version_command>
+    <command><![CDATA[
+    unzip '$archive' &&
+    perl -pi -e 's/^run_dir = .*$/run_dir = "run_dir"/' $recipe &&
+    haddock3 '$recipe' &&
+    rm '$out_file1'  &&
+    cd run_dir && zip -r '$out_file1' .
+    ]]></command>
+        <inputs>
+            <param name="archive" type="data" format="zip" label="Archive file" />
+            <param name="recipe" type="text" value="docking-protein-protein-test.cfg" label="Recipe filename" />
+        </inputs>
+        <outputs>
+            <data format="zip" name="out_file1" />
+        </outputs>
+        <help>
+        .. class:: infomark
+
+        What is haddock3?
+
+        </help>
+    <requirements>
+        <expand macro="haddock3_requirements"/>
+    </requirements>
+</tool>

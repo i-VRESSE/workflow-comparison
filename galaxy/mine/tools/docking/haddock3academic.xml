@@ -1,4 +1,4 @@
-<tool id="haddock3" name="Haddock 3" version="1.0.0" profile="21.09">
+<tool id="haddock3academic" name="Haddock 3 for academics" version="1.0.0" profile="21.09">
     <macros>
     <import>haddock3_macros.xml</import>
     </macros>

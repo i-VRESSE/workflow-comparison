@@ -326,7 +326,7 @@ galaxy:
   # files.
   # The value of this option will be resolved with respect to
   # <config_dir>.
-  #tool_config_file: tool_conf.xml
+  tool_config_file: tool_conf.xml
 
   # Tool config file for tools installed from the Galaxy Tool Shed. Must
   # be writable by Galaxy and generally should not be edited by hand. In
@@ -1013,7 +1013,7 @@ galaxy:
   #aws_estimate: false
 
   # Enable InteractiveTools.
-  #interactivetools_enable: false
+  interactivetools_enable: false
 
   # Set this to false to redirect users of Interactive tools directly to
   # the Interactive tools proxy. `interactivetools_upstream_proxy`
@@ -2357,6 +2357,8 @@ galaxy:
   # (https://galaxyproject.org/user-defined-toolbox-filters/) that
   # admins may use to restrict the tools to display.
   #tool_filters: null
+  tool_filters: 
+    - 'restrict_academic:restrict_academic'
 
   # Define toolbox filters
   # (https://galaxyproject.org/user-defined-toolbox-filters/) that

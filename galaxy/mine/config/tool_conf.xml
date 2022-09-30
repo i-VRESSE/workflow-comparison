@@ -58,5 +58,7 @@
   </section>
   <section id="docking" name="Docking">
     <tool file="docking/haddock3.xml" />
+    <tool file="docking/haddock3zip.xml" />
+    <tool file="docking/haddock3academic.xml" />
   </section>
 </toolbox>
