@@ -26,7 +26,7 @@ See `mine/` for config and tool.
 
 Things to try
 
-* upload archive file + unpack it + run haddock3
+* [ ] upload archive file + unpack it + run haddock3
   * in single go
   * [x] upload as dataset first then run haddock3 with run dir as output
     * See mine/tools/docking/haddock3.xml 
@@ -46,9 +46,10 @@ Things to try
 * [x] execute tool via api, see https://github.com/galaxyproject/bioblend
   * can we wrap bartender around galaxy?
   * See [client.py](client.py)
-* only allow member of group to run haddock3, in tool_filters in galaxy.xml and admin user management portal, see https://galaxyproject.org/user-defined-toolbox-filters/ 
-* orcid login, in /oidc_backends_config.xml.sample
-* custom user fields, aka i am an academic or commercial fellow
+* [ ] only allow member of group to run haddock3,
+  * see [#Restrict+users](#restrict-users) chapter
+* [ ] orcid login, in /oidc_backends_config.xml.sample
+* [ ] custom user fields, aka i am an academic or commercial fellow
 
 Notes
 * Needed galaxy root in shorter path (/data/galaxy) as /home/someone/bla/something/somethingelse/ was too long
@@ -95,10 +96,12 @@ After job complete each output file of haddock3 is an galaxy dataset (225 files)
 
 To only allow certain users to acces a tool 
 
+In tool_filters in galaxy.xml and admin user management portal, see https://galaxyproject.org/user-defined-toolbox-filters/ 
+
 1. Login as admin
 2. Goto http://localhost:8080/admin/form/create_role
    * Name = ACADEMICS
    * Description = Role use to restrict tools to users that claim to be academic.
    * Create new group = Yes 
 3. On http://localhost:8080/admin/users add you self to ACADEMICS group
-4. 
+4. TODO for some reason the function (./lib/galaxy/tool_util/toolbox/filters/restrict_academic.py) is not being executed
