@@ -33,7 +33,7 @@ Things to try
   * as workflow, where unzip is done as workflow step
   * [x] upload as dataset first then run haddock3 with zip as output
     * See mine/tools/docking/haddock3zip.xml
-  * generaete recipe in tool
+  * [x] generate recipe in tool
     * See mine/tools/docking/haddock3files.xml
 * [x] haddock3 container image, see https://training.galaxyproject.org/training-material/topics/admin/tutorials/singularity/tutorial.html
   * See mine/tools/docking/haddock3.xml , mine/config/job_conf.xml
@@ -105,3 +105,5 @@ In tool_filters in galaxy.xml and admin user management portal, see https://gala
    * Create new group = Yes 
 3. On http://localhost:8080/admin/users add you self to ACADEMICS group
 4. TODO for some reason the function (./lib/galaxy/tool_util/toolbox/filters/restrict_academic.py) is not being executed
+
+The function should hides the tool in the tool list, it does not make it un-executable, based on note in doc page.
