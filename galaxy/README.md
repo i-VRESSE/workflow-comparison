@@ -35,6 +35,7 @@ Things to try
     * See mine/tools/docking/haddock3zip.xml
   * [x] generate recipe in tool
     * See mine/tools/docking/haddock3files.xml
+  * [ ] HTML report, see https://planemo.readthedocs.io/en/latest/writing_advanced.html#single-html-output + https://stackoverflow.com/questions/65176053/printing-ls-la-in-html-file
 * [x] haddock3 container image, see https://training.galaxyproject.org/training-material/topics/admin/tutorials/singularity/tutorial.html
   * See mine/tools/docking/haddock3.xml , mine/config/job_conf.xml
 * job on
