@@ -47,6 +47,7 @@ Things to try
 * [x] execute tool via api, see https://github.com/galaxyproject/bioblend
   * can we wrap bartender around galaxy?
   * See [client.py](client.py)
+  * [ ] Wrapper web app which calls galaxy https://github.com/refinery-platform/refinery-platform
 * [ ] only allow member of group to run haddock3,
   * see [#Restrict+users](#restrict-users) chapter
 * [ ] orcid login, in /oidc_backends_config.xml.sample
