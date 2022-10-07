@@ -39,7 +39,7 @@ Things to try
     *  See mine/tools/docking/haddock3html.xml
 * [x] haddock3 container image, see https://training.galaxyproject.org/training-material/topics/admin/tutorials/singularity/tutorial.html
   * See mine/tools/docking/haddock3.xml , mine/config/job_conf.xml
-* job on
+* [ ] job on
   * [x] local
   * [ ] slurm
   * [ ] remote with pulsar
@@ -51,6 +51,7 @@ Things to try
   * see [#Restrict+users](#restrict-users) chapter
 * [ ] orcid login, in /oidc_backends_config.xml.sample
 * [ ] custom user fields, aka i am an academic or commercial fellow
+   * see [#custom-user-information](#custom-user-information) chapter
 
 Notes
 * Needed galaxy root in shorter path (/data/galaxy) as /home/someone/bla/something/somethingelse/ was too long
@@ -108,3 +109,13 @@ In tool_filters in galaxy.xml and admin user management portal, see https://gala
 4. TODO for some reason the function (./lib/galaxy/tool_util/toolbox/filters/restrict_academic.py) is not being executed
 
 The function should hides the tool in the tool list, it does not make it un-executable, based on note in doc page.
+
+# Custom user information
+
+At http://localhost:8080/admin/form/create_form you can in theory create a form for user information.
+The form should appear at http://localhost:8080/user/information for each user.
+
+No documentation has been found.
+
+Throws error `TypeError: 'form_type' is an invalid keyword argument for FormDefinition`
+when creating new form with [user-info-form.csv](./user-info-form.csv).
