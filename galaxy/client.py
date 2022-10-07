@@ -32,6 +32,7 @@ def main():
     print(upload_job)
     gi.jobs.wait_for_job(upload_job['jobs'][0]['id'])
     print(f"Uploaded {args.archive}")
+    
     upload_output = upload_job['outputs'][0]
     archive_input = {
         "id": upload_output['id'],

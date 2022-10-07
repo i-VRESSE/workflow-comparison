@@ -8,6 +8,7 @@
     <!-- <command>haddock3 $recipe_file</command> -->
     <configfiles>
         <configfile name="recipe_file">
+        <![CDATA[
 # Template from https://github.com/haddocking/haddock3/blob/main/examples/docking-protein-protein/docking-protein-protein-test.cfg
 # ====================================================================
 # Protein-protein docking example with NMR-derived ambiguous interaction restraints
@@ -74,7 +75,7 @@ reference_fname = "${reference_fname}"
 [clustfcc]
 
 # ====================================================================
-
+]]>
         </configfile>
     </configfiles>
         <inputs>
