@@ -79,7 +79,7 @@ sh run.sh
 
 See [mine/tools/docking/Dockerfile](mine/tools/docking/Dockerfile) how to make singularity container image for haddock3.
 
-# Example dataset
+## Example dataset
 
 ```
 cd <haddock3 repo>
@@ -95,7 +95,7 @@ zip -r docking-protein-protein.zip .
   
 After job complete each output file of haddock3 is an galaxy dataset (225 files).
 
-# Restrict users
+## Restrict users
 
 To only allow certain users to acces a tool 
 
@@ -111,7 +111,7 @@ In tool_filters in galaxy.xml and admin user management portal, see https://gala
 
 The function should hides the tool in the tool list, it does not make it un-executable, based on note in doc page.
 
-# Custom user information
+## Custom user information
 
 At http://localhost:8080/admin/form/create_form you can in theory create a form for user information.
 The form should appear at http://localhost:8080/user/information for each user.
@@ -120,3 +120,26 @@ No documentation has been found.
 
 Throws error `TypeError: 'form_type' is an invalid keyword argument for FormDefinition`
 when creating new form with [user-info-form.csv](./user-info-form.csv).
+
+## Combine workflow builder
+
+https://github.com/i-VRESSE/workflow-builder
+
+Want to use the workflow builder to make a config file or archive and then submit to galaxy
+
+Ways to combine:
+
+### Embed
+
+Replace the file picker by the builder.
+
+Problems:
+* Galaxy does not allow custom form fields
+
+### Wrap
+
+Builder submit button will submit to galaxy using api client.
+
+Problems:
+* share oidc token with builder and galaxy
+* access to files in galaxy
