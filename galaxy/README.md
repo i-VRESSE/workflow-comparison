@@ -153,6 +153,13 @@ Created webhook that on click can open haddock3 tool form, but have not found wa
 
 Start from http://localhost:8080/visualizations
 
+1. Build dist in `workflow-builder/apps/haddock3-galaxy`
+2. Symlink `workflow-builder/apps/haddock3-galaxy/dist` to `config/plugins/visualizations/haddock3/static`
+
+TODO 
+* fix loading css/js from index.html from correct base
+* talk to galaxy
+
 ### Alternate web page
 
 Define route inside galaxy web application that hosts workflow builder.

@@ -671,7 +671,7 @@ galaxy:
   # visualization plugins.  The path is relative to the Galaxy root dir.
   # To use an absolute path begin the path with '/'.  This is a
   # comma-separated list.
-  #visualization_plugins_directory: config/plugins/visualizations
+  visualization_plugins_directory: config/plugins/visualizations
 
   # Interactive tour directory: where to store interactive tour
   # definition files. Galaxy ships with several basic interface tours
