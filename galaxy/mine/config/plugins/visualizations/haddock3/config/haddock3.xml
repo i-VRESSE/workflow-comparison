@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE visualization SYSTEM "../../visualization.dtd">
+<visualization name="Haddock3 workflow builder">
+    <description>Haddock3 workflow builder powered by https://github.com/i-VRESSE/workflow-builder</description>
+    <data_sources>
+    </data_sources>
+    <params>
+    </params>
+    <entry_point entry_point_type="chart" src="dist/main.js"/>
+    <settings>
+    </settings>
+</visualization>
