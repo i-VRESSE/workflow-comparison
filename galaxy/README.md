@@ -68,10 +68,12 @@ git checkout v22.05
 ln -s $GALAXYMINE/tools/docking tools/docking
 ln -s  $GALAXYMINE/lib/galaxy/tool_util/toolbox/filters/restrict_academic.py lib/galaxy/tool_util/toolbox/filters/restrict_academic.py
 cd config
-for x in $(ls -1 $GALAXYMINE/config)
+for x in $(ls -1 $GALAXYMINE/config | grep -v plugins)
 do
 ln -s $GALAXYMINE/config/$x
 done
+ln -s $GALAXYMINE/config/plugins/webhooks/wbh3 config/plugins/webhooks/wbh3 
+ln -s $GALAXYMINE/config/plugins/visualizations/haddock3 config/plugins/visualizations/haddock3
 cd ..
 python3 -m venv .venv
 sh run.sh
@@ -135,6 +137,32 @@ Replace the file picker by the builder.
 
 Problems:
 * Galaxy does not allow custom form fields
+
+
+#### Webhook
+
+[webhook](https://docs.galaxyproject.org/en/latest/admin/special_topics/webhooks.html#tool-workflow).
+
+The frontpage and several other places can have js+css injected into using webhooks. 
+
+However a form for a tool is not one of them.
+
+Created webhook that on click can open haddock3 tool form, but have not found way to wait for form to be opened completely.
+
+### Visualization
+
+Start from http://localhost:8080/visualizations
+
+### Alternate web page
+
+Define route inside galaxy web application that hosts workflow builder.
+Submission in workflow builder would
+1. Create new history
+2. Upload zip
+3. Execute tool
+4. Redirect 
+   * to history page for tool to complete
+   * to custom status page, on complete show html report
 
 ### Wrap
 
