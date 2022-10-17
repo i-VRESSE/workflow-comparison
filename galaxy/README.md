@@ -5,6 +5,21 @@ Used from bioinformatics pipelines.
 
 A workflow is constructed from previously executed tools. Each tool input can be exposed as workflow input.
 
+- [Galaxy](#galaxy)
+  - [Pros](#pros)
+  - [Cons](#cons)
+  - [Try](#try)
+  - [Install galaxy](#install-galaxy)
+  - [Example dataset](#example-dataset)
+  - [Restrict users](#restrict-users)
+  - [Custom user information](#custom-user-information)
+  - [Combine workflow builder](#combine-workflow-builder)
+    - [Embed](#embed)
+      - [Webhook](#webhook)
+    - [Visualization](#visualization)
+    - [Alternate web page](#alternate-web-page)
+    - [Wrap](#wrap)
+
 ## Pros
 
 * Multi user
@@ -17,8 +32,8 @@ A workflow is constructed from previously executed tools. Each tool input can be
 ## Cons
 
 * Clunky forms. Need to upload data in seperate step, before submitting tool
-* compute on local or HPC batch queue systems with shared filesystem
-
+* by default compute on local or HPC batch queue systems with shared filesystem or use pulsar for non-shared fs
+* can not see live stdout on running job, so hard to tell how far job has progressed
 
 ## Try
 
@@ -54,8 +69,9 @@ Things to try
 * [ ] custom user fields, aka i am an academic or commercial fellow
    * see [#custom-user-information](#custom-user-information) chapter
 
-Notes
+Gotchas:
 * Needed galaxy root in shorter path (/data/galaxy) as /home/someone/bla/something/somethingelse/ was too long
+* static dir of custom visualization is not hosted, had to use symlink
 
 ## Install galaxy
 
@@ -74,6 +90,9 @@ ln -s $GALAXYMINE/config/$x
 done
 ln -s $GALAXYMINE/config/plugins/webhooks/wbh3 config/plugins/webhooks/wbh3 
 ln -s $GALAXYMINE/config/plugins/visualizations/haddock3 config/plugins/visualizations/haddock3
+# Normally galaxy would copy static folder over during build, but does not happen so do manually
+mkdir static/plugins/visualizations/haddock3
+ln -s $GALAXYMINE/config/plugins/visualizations/haddock3/static static/plugins/visualizations/haddock3/static 
 cd ..
 python3 -m venv .venv
 sh run.sh
@@ -86,6 +105,7 @@ See [mine/tools/docking/Dockerfile](mine/tools/docking/Dockerfile) how to make s
 ```
 cd <haddock3 repo>
 cd examples/docking-protein-protein/
+cp docking-protein-protein-test.cfg workflow.cfg
 zip -r docking-protein-protein.zip .
 ```
 
@@ -151,14 +171,44 @@ Created webhook that on click can open haddock3 tool form, but have not found wa
 
 ### Visualization
 
-Start from http://localhost:8080/visualizations
+Galaxy visualizations (`Visualize` in top nav bar) are single page web apps (SPAs) with a XML config file (`config/plugins/visualizations/<name>/config/<name>.xml`).
+The workflow build is an SPA, so could be a galaxy visualization.
 
-1. Build dist in `workflow-builder/apps/haddock3-galaxy`
-2. Symlink `workflow-builder/apps/haddock3-galaxy/dist` to `config/plugins/visualizations/haddock3/static`
+Installation:
+
+1. Build dist in `workflow-builder/apps/haddock3-galaxy` aka https://github.com/i-VRESSE/workflow-builder/tree/galaxy-visualization/apps/haddock3-galaxy
+2. Symlink `workflow-builder/apps/haddock3-galaxy/dist` to `config/plugins/visualizations/haddock3/static` and `static/plugins/visualizations/haddock3/static`
 
 TODO 
-* fix loading css/js from index.html from correct base
-* talk to galaxy
+* [x] fix loading css/js from index.html from correct base
+* [x] talk to galaxy to 
+  1. Create new history
+  2. Upload zip
+  3. Move zip to history
+  5. Wait for move completion
+  4. Execute tool
+  5. Wait for tool completion
+  6. Show results page link
+* [x] load workflow which was uploaded to galaxy manually
+
+Builder can be accessed from
+* to load existing config 
+  1. Goto http://localhost:8080/visualizations 
+  2. Find haddock3 workflow builder
+  3. Select zip file
+* to start from scratch 
+  1. Goto http://localhost:8080/static/plugins/visualizations/haddock3/static/ 
+
+Gotchas:
+* to load `docking-protein-protein.zip` into workflow builder the expert or guru catalog should be selected.
+
+Cons
+* workflow builder assumes you are logged in
+  * could check if logged in with `fetch('http://localhost:8080/api/whoami')` and responds is not `null`.
+* visualization needs a dataset to visualize, so dataset could be a workflow archive to load in the builder, but can not start with nothing.
+  * workaround is to go to /static URL, but will loose galaxy panels
+
+![Image](visualization-integration.png)
 
 ### Alternate web page
 
