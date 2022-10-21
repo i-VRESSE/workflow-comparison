@@ -58,6 +58,10 @@ Things to try
   * [x] local
   * [ ] slurm
   * [ ] remote with pulsar
+  * [ ] grid
+      * Integrating of dirac is open issue https://github.com/galaxyproject/galaxy/issues/14677
+  * [ ] cloud
+      * There is a [AWS Batch job runner](https://github.com/galaxyproject/galaxy/blob/a2465188067dbf370d7a947418e594e1cb9e5453/lib/galaxy/jobs/runners/aws.py#L87)
 * [ ] rules to run tool on some job destination (if big then destination with shared fs), see https://training.galaxyproject.org/training-material/topics/admin/tutorials/job-destinations/tutorial.html
 * [x] execute tool via api, see https://github.com/galaxyproject/bioblend
   * can we wrap bartender around galaxy?
@@ -138,10 +142,10 @@ The function should hides the tool in the tool list, it does not make it un-exec
 At http://localhost:8080/admin/form/create_form you can in theory create a form for user information.
 The form should appear at http://localhost:8080/user/information for each user.
 
-No documentation has been found.
+Some dead docs at https://galaxyproject.org/admin/config/user-information/
 
 Throws error `TypeError: 'form_type' is an invalid keyword argument for FormDefinition`
-when creating new form with [user-info-form.csv](./user-info-form.csv).
+when creating new form with file containing `Academic,Some help,text,somevalue,,True`.
 
 ## Combine workflow builder
 
