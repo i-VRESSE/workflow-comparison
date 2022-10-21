@@ -197,7 +197,7 @@ Builder can be accessed from
   2. Find haddock3 workflow builder
   3. Select zip file
 * to start from scratch 
-  1. Goto http://localhost:8080/static/plugins/visualizations/haddock3/static/ 
+  1. Goto http://localhost:8080/static/plugins/visualizations/haddock3/static/ or click on leaf icon in navbar
 
 Gotchas:
 * to load `docking-protein-protein.zip` into workflow builder the expert or guru catalog should be selected.

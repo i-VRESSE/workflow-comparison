@@ -14,5 +14,5 @@ function openHaddock3Tool() {
 }
 
 function openHaddock3Visualization() {
-    Galaxy.router.push("/plugins/visualizations/haddock3/show");
+    Galaxy.router.push("/static/plugins/visualizations/haddock3/static/");
 }
