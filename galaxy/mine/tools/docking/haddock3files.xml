@@ -1,0 +1,115 @@
+<tool id="haddock3files" name="Haddock 3 files" version="1.0.0" profile="21.09">
+    <macros>
+    <import>haddock3_macros.xml</import>
+    </macros>
+    <description> </description>
+    <version_command>haddock3 --version</version_command>
+    <command>cat $recipe_file > '$out_file1'</command>
+    <!-- <command>haddock3 $recipe_file</command> -->
+    <configfiles>
+        <configfile name="recipe_file">
+        <![CDATA[
+# Template from https://github.com/haddocking/haddock3/blob/main/examples/docking-protein-protein/docking-protein-protein-test.cfg
+# ====================================================================
+# Protein-protein docking example with NMR-derived ambiguous interaction restraints
+
+# directory in which the scoring will be done
+run_dir = "run_dir"
+ncores = 40
+mode = "local"
+
+# molecules to be docked
+molecules =  [
+#set $nmols = len($molecules) - 1
+#for $i, $m in enumerate($molecules)
+    "${m.pdb}"
+    #if $i < $nmols
+    ,
+    #end if
+#end for
+]
+# ====================================================================
+# Parameters for each stage are defined below, prefer full paths
+# ====================================================================
+[topoaa]
+autohis = ${autohis}
+#for $i, $m in enumerate($molecules)
+[topoaa.mol${i+1}]
+#set $nhisd = len($m.hisds)
+nhisd = $nhisd
+#for $i, $h in enumerate($m.hisds)
+hisd_${i+1} = ${h.hisd}
+#end for
+#set $nhise = len($m.hises)
+nhise = $nhise
+#for $i, $h in enumerate($m.hises)
+hise_${i+1} = ${h.hise}
+#end for
+#end for
+
+[rigidbody]
+tolerance = ${tolerance}
+ambig_fname = "${ambig_fname}"
+sampling = ${sampling}
+
+[caprieval]
+reference_fname = "${reference_fname}"
+
+[seletop]
+select = ${select}
+
+[flexref]
+tolerance = ${tolerance}
+ambig_fname = ${ambig_fname}
+
+[caprieval]
+reference_fname = "${reference_fname}"
+
+[emref]
+tolerance = ${tolerance}
+ambig_fname = ${ambig_fname}
+
+[caprieval]
+reference_fname = "${reference_fname}"
+
+[clustfcc]
+
+# ====================================================================
+]]>
+        </configfile>
+    </configfiles>
+        <inputs>
+            <repeat name="molecules" title="Molecules">
+                <param name="pdb" type="data" format="pdb" label="PDB file" />
+                <repeat name="hisds" title="hisds">
+                    <param name="hisd" type="integer" label="hisd" value="0"/>
+                </repeat>
+                <repeat name="hises" title="hises">
+                    <param name="hise" type="integer" label="hise" value="0"/>
+                </repeat>
+            </repeat>
+            <param name="autohis" type="boolean" label="autohis" value="true"/>
+            <param name="select" type="integer" label="seletop select" value="5"/>
+            <param name="sampling" type="integer" label="rigidbody sampling" value="20"/>
+            <param name="reference_fname" type="data" format="pdb" label="Reference" />
+            <param name="ambig_fname" type="data" format="tbl" label="Ambig" />
+            <param name="tolerance" type="float" label="tolerance" value="20"/>
+        </inputs>
+        <outputs>
+            <data format="txt" name="out_file1" />
+            <collection name="haddock3run" type="list:list" label="${tool.name} on ${on_string}">
+                <discover_datasets pattern="__name__" directory="run_dir" visible="true" format="auto" recurse="true" match_relative_path="true"/>
+            </collection>
+        </outputs>
+        <help>
+        .. class:: infomark
+
+        What is haddock3?
+
+        Tool which uses multiple files as input and generates recipe file.
+
+        </help>
+    <requirements>
+        <expand macro="haddock3_requirements"/>
+    </requirements>
+</tool>

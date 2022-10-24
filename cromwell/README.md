@@ -8,3 +8,5 @@ Worlfow format WDL or CWL
 * Lots of backends, like SLURM and AWSBatch
 
 ## Cons
+
+* Written in Scala

@@ -1,0 +1,52 @@
+<tool id="haddock3" name="Haddock 3" version="1.0.0" profile="21.09">
+    <macros>
+    <import>haddock3_macros.xml</import>
+    </macros>
+    <description> </description>
+    <version_command>haddock3 --version</version_command>
+    <!-- unzip + Overwrite run_dir to known value in recipe file + run haddock3 -->
+    <!-- <command><![CDATA[
+    ( unzip '$archive' &&
+    perl -pi -e 's/^run_dir = .*$/run_dir = "run_dir"/' $recipe &&
+    haddock3 '$recipe' && haddock3-clean run_dir && find) > $stdout 2> $stderr
+    ]]></command> -->
+    <command><![CDATA[
+    unzip '$archive' &&
+    perl -pi -e 's/^run_dir = .*$/run_dir = "run_dir"/' $recipe &&
+    haddock3 '$recipe'
+    ]]></command>
+        <inputs>
+            <!-- <param name="recipe" type="data" format="toml" label="Recipe file" /> -->
+            <!-- <param name="archive" type="file" format="zip" label="Archive file" /> -->
+
+            <param name="recipe" type="text" value="docking-protein-protein-test.cfg" label="Recipe filename" />
+            <param name="archive" type="data" format="zip" label="Archive file" />
+            
+            <!-- <repeat name="pdbs" title="Some title">
+                <param name="pdb" type="data" format="pdb" label="PDB files" />
+            </repeat> -->
+        </inputs>
+        <outputs>
+            <!-- <data name="stdout" format="txt" label="Standard out" />
+            <data name="stderr" format="txt" label="Standard err"/>
+ -->
+            <collection name="haddock3run" type="list:list" label="${tool.name} ${recipe.value} on ${on_string}">
+                <discover_datasets pattern="__name__" directory="run_dir" visible="true" format="auto" recurse="true" match_relative_path="true"/>
+                <!-- <discover_datasets pattern="__name_and_ext__" directory="run_dir" visible="true" format="auto" recurse="true"/> -->
+                <!-- <discover_datasets directory="run_dir" pattern="(?P&lt;module&gt;.*)\/(?P&lt;name&gt;.*)\.(?P&lt;ext&gt;[^\.]+)?" match_relative_path="true"  visible="true" format="auto" recurse="true"/> -->
+            </collection>
+        </outputs>
+        <help>
+        .. class:: infomark
+
+        What is haddock3?
+
+
+        </help>
+    <requirements>
+        <expand macro="haddock3_requirements"/>
+    </requirements>
+    <environment_variables>
+        <environment_variable name="GALAXY_API_KEY" inject="api_key" />
+    </environment_variables>
+</tool>

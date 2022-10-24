@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<toolbox tool_path="/data/galaxy/database/shed_tools">
+    <section id="getext" name="Get Data" version="">
+        <tool file="toolshed.g2.bx.psu.edu/repos/imgteam/unzip/38eec75fbe9b/unzip/unzip.xml" guid="toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/0.2">
+            <tool_shed>toolshed.g2.bx.psu.edu</tool_shed>
+            <repository_name>unzip</repository_name>
+            <repository_owner>imgteam</repository_owner>
+            <installed_changeset_revision>38eec75fbe9b</installed_changeset_revision>
+            <id>toolshed.g2.bx.psu.edu/repos/imgteam/unzip/unzip/0.2</id>
+            <version>0.2</version>
+        </tool>
+    </section>
+</toolbox>

@@ -1,0 +1,12 @@
+id: wbh3
+type:
+ - masthead
+
+activate: true
+icon: fa-leaf
+title: Workflow builder 4 haddock3
+tooltip: Workflow builder 4 haddock3 tip
+
+function: >
+ // showWorkflowBuilder(options)
+  window.location = "/static/plugins/visualizations/haddock3/static/"

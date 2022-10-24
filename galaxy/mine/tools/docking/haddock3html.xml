@@ -1,0 +1,32 @@
+<tool id="haddock3html" name="Haddock 3 html" version="1.0.0" profile="21.09">
+    <macros>
+    <import>haddock3_macros.xml</import>
+    </macros>
+    <description> </description>
+    <version_command>haddock3 --version</version_command>
+    <command><![CDATA[
+    unzip '$archive' &&
+    perl -pi -e 's/^run_dir = .*$/run_dir = "run_dir"/' $recipe &&
+    haddock3 '$recipe' &&
+    mv run_dir '$html_file.extra_files_path' &&
+    echo '<html><table>' > '$html_file' &&
+    find '$html_file.extra_files_path' -type f -printf '<tr><td><a href="%P">%P</a></td><td>%s</td><td>%Tc</td></tr>\n' >> '$html_file' &&
+    echo "</table></html>" >> '$html_file'
+    ]]></command>
+        <inputs>
+            <param name="archive" type="data" format="zip" label="Archive file" />
+            <param name="recipe" type="text" value="docking-protein-protein-test.cfg" label="Recipe filename" />
+        </inputs>
+        <outputs>
+            <data format="html" name="html_file" label="index.html"/>
+        </outputs>
+        <help>
+        .. class:: infomark
+
+        What is haddock3?
+
+        </help>
+    <requirements>
+        <expand macro="haddock3_requirements"/>
+    </requirements>
+</tool>

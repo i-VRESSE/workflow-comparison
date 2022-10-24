@@ -1,0 +1,10 @@
+.tox
+build
+dist
+haddock3-docs
+examples
+tests
+htmlcov
+venv
+env
+*.sif

@@ -1,0 +1,7 @@
+<macros>
+  <xml name="haddock3_requirements">
+      <!-- TODO figure out how to make image path relative to something -->
+        <!-- <container type="singularity">/home/stefanv/git/vre4imbc/workflow-comparison/galaxy/mine/tools/docking/haddock3-d460a0a5.sif</container> -->
+        <container type="singularity">/home/verhoes/git/vre4imbc/workflow-comparison/galaxy/mine/tools/docking/haddock3-b69f6e3d.sif</container>
+  </xml>
+</macros>
