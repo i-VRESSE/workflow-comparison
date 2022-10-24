@@ -34,6 +34,8 @@ A workflow is constructed from previously executed tools. Each tool input can be
 * Clunky forms. Need to upload data in seperate step, before submitting tool
 * by default compute on local or HPC batch queue systems with shared filesystem or use pulsar for non-shared fs
 * can not see live stdout on running job, so hard to tell how far job has progressed
+* the GUI is too restrictive, the input form for our jobs needs to be much more dynamic and custom
+* vendor lock in is too great, I think we will customize is so much that is hard to keep up to date or switch
 
 ## Try
 
